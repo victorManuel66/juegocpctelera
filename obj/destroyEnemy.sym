@@ -1,0 +1,24 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     PlayAlto=  0002     |     PlayAnch=  0003 
+    PlayVida=  0006     |     PlayX   =  0000     |     PlayY   =  0001 
+    SprPlayH=  0005     |     SprPlayL=  0004     |     SpriteAl=  0005 
+    SpriteBa=  0004     |     StatusAn=  0008     |   0 destruye   0001 GR
+    enemiAlt=  0002     |     enemiAnc=  0003     |     enemiVel=  0006 
+    enemiX  =  0000     |     enemiY  =  0001     |     frame1Al=  000A 
+    frame1Ba=  0009     |     frame2Al=  000C     |     frame2Ba=  000B 
+    frame3Al=  000E     |     frame3Ba=  000D     |     frame4Al=  0010 
+    frame4Ba=  000F     |     frame5Al=  0012     |     frame5Ba=  0011 
+  0 num_enem   0000 R   |     tamagno_=  0013     |     temporiz=  0007 
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size    A   flags    0
+

@@ -1,0 +1,49 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     FPS     =  0007     |     PlayAlto=  0002 
+    PlayAnch=  0003     |     PlayVida=  0006     |     PlayX   =  0000 
+    PlayY   =  0001     |     Player     **** GX  |     SprPlayH=  0005 
+    SprPlayL=  0004     |     SpriteAl=  0005     |     SpriteBa=  0004 
+    StatusAn=  0008     |     TeclaDe    **** GX  |     TeclaDi    **** GX
+    TeclaIz    **** GX  |     _Newexpl   **** GX  |     _fondo     **** GX
+  0 _main      0011 GR  |     _spr       **** GX  |     _tileset   **** GX
+    calXenem   **** GX  |     colision   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_dis   **** GX
+    cpct_dra   **** GX  |     cpct_dra   **** GX  |     cpct_dra   **** GX
+    cpct_dra   **** GX  |     cpct_etm   **** GX  |     cpct_etm   **** GX
+    cpct_get   **** GX  |     cpct_get   **** GX  |     cpct_isA   **** GX
+    cpct_isK   **** GX  |     cpct_sca   **** GX  |     cpct_set   **** GX
+    cpct_set   **** GX  |     cpct_set   **** GX  |     cpct_wai   **** GX
+    dere       **** GX  |     destruye   **** GX  |     destruye   **** GX
+    disparan   **** GX  |     draw_ene   **** GX  |     draw_las   **** GX
+    draw_pla   **** GX  |     enemiAlt=  0002     |     enemiAnc=  0003 
+    enemiVel=  0006     |     enemiX  =  0000     |     enemiY  =  0001 
+    enemy      **** GX  |     enemy2     **** GX  |     enemy3     **** GX
+    erase_en   **** GX  |     erase_la   **** GX  |     erase_pl   **** GX
+    escore     **** GX  |   0 espera     0148 R   |     frame1Al=  000A 
+    frame1Ba=  0009     |     frame2Al=  000C     |     frame2Ba=  000B 
+    frame3Al=  000E     |     frame3Ba=  000D     |     frame4Al=  0010 
+    frame4Ba=  000F     |     frame5Al=  0012     |     frame5Ba=  0011 
+    fue        **** GX  |     gameover   **** GX  |     izqui      **** GX
+    laser_co   **** GX  |     lives      **** GX  |   0 main_loo   00D5 R
+    menu       **** GX  |     new        **** GX  |   0 newGame    0031 R
+  0 nextShip   00A5 R   |   0 nodispar   011E GR  |   0 num_enem   0000 R
+  0 paleta     0001 R   |     posXenem   **** GX  |     posXlase   **** GX
+    posXplay   **** GX  |     posYenem   **** GX  |     posYlase   **** GX
+    puntos     **** GX  |     tamagno_=  0013     |     temporiz=  0007 
+    update_e   **** GX  |     update_l   **** GX  |     update_p   **** GX
+    writeMen   **** GX  |     writeMen   **** GX  |     writeMen   **** GX
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size  160   flags    0
+   1 _DATA      size    0   flags    0
+

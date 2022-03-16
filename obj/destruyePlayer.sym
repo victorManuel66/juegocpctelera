@@ -1,0 +1,30 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     Player     **** GX  |     TeclaDe    **** GX
+    TeclaDi    **** GX  |     TeclaIz    **** GX  |     _playere   **** GX
+    _playere   **** GX  |     _playere   **** GX  |     _playere   **** GX
+    _playere   **** GX  |   0 aBorrar    0002 R   |   0 anima      0072 R
+  0 borraDos   0068 R   |   0 borraNav   0080 R   |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_dis   **** GX
+    cpct_dra   **** GX  |     cpct_dra   **** GX  |     cpct_dra   **** GX
+    cpct_dra   **** GX  |     cpct_etm   **** GX  |     cpct_etm   **** GX
+    cpct_get   **** GX  |     cpct_get   **** GX  |     cpct_isA   **** GX
+    cpct_isK   **** GX  |     cpct_sca   **** GX  |     cpct_set   **** GX
+    cpct_set   **** GX  |     cpct_set   **** GX  |     cpct_wai   **** GX
+  0 destruye   0003 GR  |     disparan   **** GX  |     draw_pla   **** GX
+    erase_pl   **** GX  |   0 espera     0079 R   |   0 otro       007B R
+    posXplay   **** GX  |     posYenem   **** GX  |   0 primerBo   0001 R
+  0 segundBo   0000 R   |     update_p   **** GX
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size   92   flags    0
+

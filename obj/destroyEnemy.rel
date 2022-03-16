@@ -1,0 +1,11 @@
+XL2
+H 1 areas 2 global symbols
+S .__.ABS. Def0000
+A _CODE size A flags 0 addr 0
+S destruyeEnemigo Def0001
+T 00 00 03
+R 00 00 00 00
+T 01 00
+R 00 00 00 00
+T 01 00 DD 36 06 00 DD 36 08 01 C9
+R 00 00 00 00

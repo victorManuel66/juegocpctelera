@@ -1,0 +1,1 @@
+.globl colision_enemy

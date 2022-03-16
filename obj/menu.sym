@@ -1,0 +1,115 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     CPCT_VME=  C000     |     FW_BLACK=  0000 
+    FW_BLUE =  0001     |     FW_BRIGH=  0002     |     FW_BRIGH=  0014 
+    FW_BRIGH=  0012     |     FW_BRIGH=  0008     |     FW_BRIGH=  0006 
+    FW_BRIGH=  001A     |     FW_BRIGH=  0018     |     FW_CYAN =  000A 
+    FW_GREEN=  0009     |     FW_LIME =  0015     |     FW_MAGEN=  0004 
+    FW_MAUVE=  0005     |     FW_ORANG=  000F     |     FW_PASTE=  000E 
+    FW_PASTE=  0017     |     FW_PASTE=  0016     |     FW_PASTE=  0011 
+    FW_PASTE=  0019     |     FW_PINK =  0010     |     FW_PURPL=  0007 
+    FW_RED  =  0003     |     FW_SEA_G=  0013     |     FW_SKY_B=  000B 
+    FW_WHITE=  000D     |     FW_YELLO=  000C     |     HW_BLACK=  0014 
+    HW_BLUE =  0004     |     HW_BRIGH=  0015     |     HW_BRIGH=  0013 
+    HW_BRIGH=  0012     |     HW_BRIGH=  000D     |     HW_BRIGH=  000C 
+    HW_BRIGH=  000B     |     HW_BRIGH=  000A     |     HW_CYAN =  0006 
+    HW_GREEN=  0016     |     HW_LIME =  001A     |     HW_MAGEN=  0018 
+    HW_MAUVE=  001D     |     HW_ORANG=  000E     |     HW_PASTE=  001F 
+    HW_PASTE=  001B     |     HW_PASTE=  0019     |     HW_PASTE=  000F 
+    HW_PASTE=  0003     |     HW_PINK =  0007     |     HW_PURPL=  0005 
+    HW_RED  =  001C     |     HW_SEA_G=  0002     |     HW_SKY_B=  0017 
+    HW_WHITE=  0000     |     HW_YELLO=  001E     |     Joy0_Dow=  0209 
+    Joy0_Fir=  1009     |     Joy0_Fir=  2009     |     Joy0_Fir=  4009 
+    Joy0_Lef=  0409     |     Joy0_Rig=  0809     |     Joy0_Up =  0109 
+    Joy1_Dow=  0206     |     Joy1_Fir=  1006     |     Joy1_Fir=  2006 
+    Joy1_Fir=  4006     |     Joy1_Lef=  0406     |     Joy1_Rig=  0806 
+    Joy1_Up =  0106     |     Key_0   =  0104     |     Key_1   =  0108 
+    Key_2   =  0208     |     Key_3   =  0207     |     Key_4   =  0107 
+    Key_5   =  0206     |     Key_6   =  0106     |     Key_7   =  0205 
+    Key_8   =  0105     |     Key_9   =  0204     |     Key_A   =  2008 
+    Key_At  =  0403     |     Key_B   =  4006     |     Key_Back=  4002 
+    Key_C   =  4007     |     Key_Caps=  4008     |     Key_Care=  0103 
+    Key_Clos=  0802     |     Key_Clr =  0102     |     Key_Colo=  2003 
+    Key_Comm=  8004     |     Key_Cont=  8002     |     Key_Copy=  0201 
+    Key_Curs=  0400     |     Key_Curs=  0101     |     Key_Curs=  0200 
+    Key_Curs=  0100     |     Key_D   =  2007     |     Key_Del =  8009 
+    Key_Dot =  8003     |     Key_E   =  0407     |     Key_Ente=  4000 
+    Key_Esc =  0408     |     Key_F   =  2006     |     Key_F0  =  8001 
+    Key_F1  =  2001     |     Key_F2  =  4001     |     Key_F3  =  2000 
+    Key_F4  =  1002     |     Key_F5  =  1001     |     Key_F6  =  1000 
+    Key_F7  =  0401     |     Key_F8  =  0801     |     Key_F9  =  0800 
+    Key_FDot=  8000     |     Key_G   =  1006     |     Key_H   =  1005 
+    Key_Hyph=  0203     |     Key_I   =  0804     |     Key_J   =  2005 
+    Key_K   =  2004     |     Key_L   =  1004     |     Key_M   =  4004 
+    Key_N   =  4005     |     Key_O   =  0404     |     Key_Open=  0202 
+    Key_P   =  0803     |     Key_Q   =  0808     |     Key_R   =  0406 
+    Key_Retu=  0402     |     Key_S   =  1007     |     Key_Semi=  1003 
+    Key_Shif=  2002     |     Key_Slas=  4003     |     Key_Spac=  8005 
+    Key_T   =  0806     |     Key_Tab =  1008     |     Key_U   =  0405 
+    Key_V   =  8006     |     Key_W   =  0807     |     Key_X   =  8007 
+    Key_Y   =  0805     |     Key_Z   =  8008     |     Player     **** GX
+  0 Pulsado1   0066 R   |   0 Pulsado2   0069 R   |   0 Pulsado3   006E R
+    TeclaDe    **** GX  |     TeclaDi    **** GX  |     TeclaIz    **** GX
+  0 _40        048D R   |   0 _40bit0    04DB R   |   0 _40bit1    04D0 R
+  0 _40bit2    04C5 R   |   0 _40bit3    04BA R   |   0 _40bit4    04AF R
+  0 _40bit5    04A4 R   |   0 _40bit6    0499 R   |   0 _41        0435 R
+  0 _41bit0    0483 R   |   0 _41bit1    0478 R   |   0 _41bit2    046D R
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 _41bit3    0462 R   |   0 _41bit4    0457 R   |   0 _41bit5    044C R
+  0 _41bit6    0441 R   |   0 _42        03DD R   |   0 _42bit0    042B R
+  0 _42bit1    0420 R   |   0 _42bit2    0415 R   |   0 _42bit3    040A R
+  0 _42bit4    03FF R   |   0 _42bit5    03F4 R   |   0 _42bit6    03E9 R
+  0 _43        0385 R   |   0 _43bit0    03D3 R   |   0 _43bit1    03C8 R
+  0 _43bit2    03BD R   |   0 _43bit3    03B2 R   |   0 _43bit4    03A7 R
+  0 _43bit5    039C R   |   0 _43bit6    0391 R   |   0 _44        032D R
+  0 _44bit0    037B R   |   0 _44bit1    0370 R   |   0 _44bit2    0365 R
+  0 _44bit3    035A R   |   0 _44bit4    034F R   |   0 _44bit5    0344 R
+  0 _44bit6    0339 R   |   0 _45        02D5 R   |   0 _45bit0    0323 R
+  0 _45bit1    0318 R   |   0 _45bit2    030D R   |   0 _45bit3    0302 R
+  0 _45bit4    02F7 R   |   0 _45bit5    02EC R   |   0 _45bit6    02E1 R
+  0 _46        027C R   |   0 _46bit0    02CB R   |   0 _46bit1    02C0 R
+  0 _46bit2    02B5 R   |   0 _46bit3    02A9 R   |   0 _46bit4    029E R
+  0 _46bit5    0293 R   |   0 _46bit6    0288 R   |   0 _47        0224 R
+  0 _47bit0    0272 R   |   0 _47bit1    0267 R   |   0 _47bit2    025C R
+  0 _47bit3    0251 R   |   0 _47bit4    0246 R   |   0 _47bit5    023B R
+  0 _47bit6    0230 R   |   0 _48        01CC R   |   0 _48bit0    021A R
+  0 _48bit1    020F R   |   0 _48bit2    0204 R   |   0 _48bit3    01F9 R
+  0 _48bit4    01EE R   |   0 _48bit5    01E3 R   |   0 _48bit6    01D8 R
+  0 _49        0174 R   |     _cpct_ke   **** GX  |   0 bit0       01C2 R
+  0 bit1       01B7 R   |   0 bit2       01AC R   |   0 bit3       01A1 R
+  0 bit4       0196 R   |   0 bit5       018B R   |   0 bit6       0180 R
+  0 cont       0049 R   |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_dis   **** GX  |     cpct_dra   **** GX
+    cpct_dra   **** GX  |     cpct_dra   **** GX  |     cpct_dra   **** GX
+    cpct_etm   **** GX  |     cpct_etm   **** GX  |     cpct_get   **** GX
+    cpct_get   **** GX  |     cpct_isA   **** GX  |     cpct_isK   **** GX
+    cpct_pag=  0000     |     cpct_pag=  0010     |     cpct_pag=  0020 
+    cpct_pag=  0030     |     cpct_sca   **** GX  |     cpct_set   **** GX
+    cpct_set   **** GX  |     cpct_set   **** GX  |     cpct_set   **** GX
+    cpct_wai   **** GX  |   0 delay      012A R   |     dere       **** GX
+    disparan   **** GX  |   0 drawKey    0130 R   |     draw_pla   **** GX
+    erase_pl   **** GX  |     escore     **** GX  |   0 espera     012C R
+    fue        **** GX  |     gameover   **** GX  |     izqui      **** GX
+  0 keyfire    0105 R   |   0 keyleft    009E R   |   0 keyright   00D3 R
+    lives      **** GX  |   0 menu       0000 GR  |     new        **** GX
+  0 otraLine   0135 R   |     posXplay   **** GX  |     posYenem   **** GX
+    puntos     **** GX  |   0 redefine   0081 R   |     update_p   **** GX
+  0 whoKey     0140 R   |     writeMen   **** GX  |     writeMen   **** GX
+    writeMen   **** GX
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 3.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size  4E5   flags    0
+

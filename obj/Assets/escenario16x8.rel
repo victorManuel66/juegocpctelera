@@ -1,0 +1,63 @@
+XL2
+H 9 areas A global symbols
+M escenario16x8
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 50 flags 0 addr 0
+S _esce_0 Def0010
+S _esce_1 Def0018
+S _esce_2 Def0020
+S _esce_3 Def0028
+S _esce_4 Def0030
+S _esce_5 Def0038
+S _esce_6 Def0040
+S _esce_7 Def0048
+S _tileset Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 10 00 18 00 20 00
+R 00 00 00 00 00 02 00 00 00 04 00 00 00 06 00 00
+T 06 00 28 00 30 00 38 00
+R 00 00 00 00 00 02 00 00 00 04 00 00 00 06 00 00
+T 0C 00 40 00 48 00
+R 00 00 00 00 00 02 00 00 00 04 00 00
+T 10 00
+R 00 00 00 00
+T 10 00 C0 F0 D0 BB F5 BB F5 BB
+R 00 00 00 00
+T 18 00
+R 00 00 00 00
+T 18 00 F0 C0 77 E0 77 FA 77 FA
+R 00 00 00 00
+T 20 00
+R 00 00 00 00
+T 20 00 C0 C0 C0 C0 C0 C0 C0 C0
+R 00 00 00 00
+T 28 00
+R 00 00 00 00
+T 28 00 C0 C0 C0 C0 C0 C0 C0 C0
+R 00 00 00 00
+T 30 00
+R 00 00 00 00
+T 30 00 F5 BB F5 FA F5 E0 F0 C0
+R 00 00 00 00
+T 38 00
+R 00 00 00 00
+T 38 00 77 FA F5 FA D0 FA C0 F0
+R 00 00 00 00
+T 40 00
+R 00 00 00 00
+T 40 00 C0 C0 C0 C0 C0 C0 C0 C0
+R 00 00 00 00
+T 48 00
+R 00 00 00 00
+T 48 00 C0 C0 C0 C0 C0 C0 C0 C0
+R 00 00 00 00

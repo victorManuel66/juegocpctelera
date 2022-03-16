@@ -1,0 +1,41 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     PlayAlto=  0002     |     PlayAnch=  0003 
+    PlayVida=  0006     |     PlayX   =  0000     |     PlayY   =  0001 
+    Player     **** GX  |     SprPlayH=  0005     |     SprPlayL=  0004 
+    SpriteAl=  0005     |     SpriteBa=  0004     |     StatusAn=  0008 
+    TeclaDe    **** GX  |     TeclaDi    **** GX  |     TeclaIz    **** GX
+    calXenem   **** GX  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_dis   **** GX  |     cpct_dra   **** GX
+    cpct_dra   **** GX  |     cpct_dra   **** GX  |     cpct_dra   **** GX
+    cpct_etm   **** GX  |     cpct_etm   **** GX  |     cpct_get   **** GX
+    cpct_get   **** GX  |     cpct_isA   **** GX  |     cpct_isK   **** GX
+    cpct_sca   **** GX  |     cpct_set   **** GX  |     cpct_set   **** GX
+    cpct_set   **** GX  |     cpct_wai   **** GX  |     destruye   **** GX
+    disparan   **** GX  |     draw_ene   **** GX  |     draw_las   **** GX
+    draw_pla   **** GX  |     enemiAlt=  0002     |     enemiAnc=  0003 
+    enemiVel=  0006     |     enemiX  =  0000     |     enemiY  =  0001 
+    enemy      **** GX  |     enemy2     **** GX  |     enemy3     **** GX
+    erase_en   **** GX  |     erase_la   **** GX  |     erase_pl   **** GX
+  0 explosio   0064 R   |     frame1Al=  000A     |     frame1Ba=  0009 
+    frame2Al=  000C     |     frame2Ba=  000B     |     frame3Al=  000E 
+    frame3Ba=  000D     |     frame4Al=  0010     |     frame4Ba=  000F 
+    frame5Al=  0012     |     frame5Ba=  0011     |   0 laser_co   0016 R
+  0 laser_co   0001 GR  |   0 num_enem   0000 R   |     posXenem   **** GX
+    posXlase   **** GX  |     posXplay   **** GX  |     posYenem   **** GX
+    posYlase   **** GX  |   0 sigui_en   0008 R   |     suma       **** GX
+    tamagno_=  0013     |     temporiz=  0007     |     update_e   **** GX
+    update_l   **** GX  |     update_p   **** GX  |   0 verY       002B R
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size   78   flags    0
+

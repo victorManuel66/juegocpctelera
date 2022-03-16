@@ -1,0 +1,23 @@
+XL2
+H 9 areas 2 global symbols
+M naveexplo3
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 1E flags 0 addr 0
+S _playerexplo3 Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C0 F3 F3 F3 C0 C0 B2 30 71 C0 C0 B2 F3 71
+R 00 00 00 00
+T 0E 00 C0 90 B2 F3 71 60 90 B2 30 71 60 D9 F3 F3
+R 00 00 00 00
+T 1C 00 F3 E6
+R 00 00 00 00

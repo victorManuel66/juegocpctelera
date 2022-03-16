@@ -1,0 +1,366 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+
+
+                              1 .module principal
+                              2 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+
+
+                              3 .include "cpctelera.h.s"
+                              1 .globl cpct_disableFirmware_asm
+                              2 .globl cpct_setVideoMode_asm
+                              3 .globl cpct_setPalette_asm
+                              4 .globl cpct_drawSprite_asm
+                              5 .globl cpct_getScreenPtr_asm
+                              6 .globl cpct_scanKeyboard_asm
+                              7 .globl cpct_isKeyPressed_asm
+                              8 .globl cpct_waitVSYNC_asm
+                              9 .globl cpct_drawSolidBox_asm
+                             10 .globl cpct_etm_setTileset2x4_asm
+                             11 .globl cpct_etm_drawTileBox2x4_asm
+                             12 .globl cpct_getRandom_xsp40_u8_asm
+                             13 .globl cpct_akp_SFXInit_asm
+                             14 .globl cpct_akp_musicInit_asm
+                             15 .globl cpct_akp_musicPlay_asm
+                             16 .globl cpct_akp_SFXPlay_asm
+                             17 .globl cpct_akp_SFXStop_asm
+                             18 .globl cpct_akp_stop_asm
+                             19 .globl cpct_drawStringM0_asm
+                             20 .globl cpct_setDrawCharM0_asm
+                             21 .globl cpct_isAnyKeyPressed_asm
+                             22 .globl cpct_drawCharM0_asm
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 3.
+Hexadecimal [16-Bits]
+
+
+
+                              4 .include "Player.h.s"
+                              1 .globl draw_player
+                              2 .globl update_player
+                              3 .globl erase_player
+                              4 .globl disparando
+                              5 .globl posXplayerPtr
+                              6 .globl posYenemyPtr
+                              7 .globl Player
+                              8 .globl TeclaIz
+                              9 .globl TeclaDe
+                             10 .globl TeclaDi
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 4.
+Hexadecimal [16-Bits]
+
+
+
+                              5 .include "laser.h.s"
+                              1 .globl draw_laser
+                              2 .globl erase_laser
+                              3 .globl update_laser
+                              4 .globl posXlaserPtr
+                              5 .globl posYlaserPtr
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 5.
+Hexadecimal [16-Bits]
+
+
+
+                              6 .include "enemy.h.s"
+                              1 .globl draw_enemy
+                              2 .globl calXenemy
+                              3 .globl erase_enemy
+                              4 .globl update_enemy
+                              5 .globl posXenemyPtr
+                              6 .globl posYenemyPtr
+                              7 .globl enemy
+                              8 .globl enemy2
+                              9 .globl enemy3
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 6.
+Hexadecimal [16-Bits]
+
+
+
+                              7 .include "laserColision.h.s"
+                              1 .globl laser_colision
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 7.
+Hexadecimal [16-Bits]
+
+
+
+                              8 .include "enemy_colision.h.s"
+                              1 .globl colision_enemy
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 8.
+Hexadecimal [16-Bits]
+
+
+
+                              9 .include "destruyePlayer.h.s"
+                              1 .globl destruyePlayer
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 9.
+Hexadecimal [16-Bits]
+
+
+
+                             10 .include "mensajes.h.s"
+                              1 .globl gameover
+                              2 .globl escore
+                              3 .globl new
+                              4 .globl lives
+                              5 .globl writeMenu1
+                              6 .globl writeMenu2
+                              7 .globl writeMenu3
+                              8 .globl izqui
+                              9 .globl dere
+                             10 .globl fue
+                             11 .globl puntos
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 10.
+Hexadecimal [16-Bits]
+
+
+
+                             11 .include "menu.h.s"
+                              1 .globl menu
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 11.
+Hexadecimal [16-Bits]
+
+
+
+                             12 .include "destroyEnemy.h.s"
+                              1 .globl destruyeEnemigo
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 12.
+Hexadecimal [16-Bits]
+
+
+
+                             13 .include "datos.h.s"
+                     0013     1 tamagno_enemy = 0x13                               ;; Tamaño del array de entidades
+   0000 03                    2 num_enemigos: .db 0x03                             ;; Número de enemigos
+                              3 
+                              4 ;; Constantes del array del enemigo
+                     0000     5 .equ enemiX,      0
+                     0001     6 .equ enemiY,      1
+                     0002     7 .equ enemiAlto,   2
+                     0003     8 .equ enemiAncho,  3
+                     0004     9 .equ SpriteBajo,  4
+                     0005    10 .equ SpriteAlto,  5
+                     0006    11 .equ enemiVelo,   6
+                     0007    12 .equ temporiza,   7
+                     0008    13 .equ StatusAni,   8
+                     0009    14 .equ frame1Bajo,  9
+                     000A    15 .equ frame1Alto, 10
+                     000B    16 .equ frame2Bajo, 11
+                     000C    17 .equ frame2Alto, 12
+                     000D    18 .equ frame3Bajo, 13
+                     000E    19 .equ frame3Alto, 14
+                     000F    20 .equ frame4Bajo, 15
+                     0010    21 .equ frame4Alto, 16
+                     0011    22 .equ frame5Bajo, 17
+                     0012    23 .equ frame5Alto, 18
+                             24 
+                             25 ;; Constantes del Player
+                     0000    26 .equ PlayX,      0
+                     0001    27 .equ PlayY,      1
+                     0002    28 .equ PlayAlto,   2
+                     0003    29 .equ PlayAncho,  3
+                     0004    30 .equ SprPlayLo,  4
+                     0005    31 .equ SprPlayHi,  5
+                     0006    32 .equ PlayVidas,  6
+                     0007    33 .equ FPS,        7
+                             34 
+                             35 
+                             36 
+                             37 
+                             38 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 13.
+Hexadecimal [16-Bits]
+
+
+
+                             14 
+                             15 .area _DATA
+                             16 .area _CODE
+                             17 
+                             18 .globl _tileset
+                             19 .globl _fondo
+                             20 .globl _Newexplo
+                             21 .globl _spr
+                             22 
+                             23 
+                             24 
+                             25 
+   0001                      26 paleta:
+   0001 14 14 1D 18 0C 1C    27    .db 20,20,29,24,12,28,11,2,0,14,0,0,19,10,0,27
+        0B 02 00 0E 00 00
+        13 0A 00 1B
+                             28 
+   0011                      29 _main::
+                             30    ;; Disable firmware to prevent it from interfering with string drawing
+   0011 CD 00 00      [17]   31    call cpct_disableFirmware_asm
+                             32    ;; Cambiamos a modo de video 0
+   0014 0E 00         [ 7]   33    ld  c, #0x00
+   0016 CD 00 00      [17]   34    call cpct_setVideoMode_asm
+                             35    ;; Asignamos colores a la paleta
+   0019 21 01 00      [10]   36    ld hl, #paleta
+   001C 11 10 00      [10]   37    ld de, #0x10
+   001F CD 00 00      [17]   38    call cpct_setPalette_asm
+                             39    ;; Inicializar sonidos SFX
+   0022 11 00 00      [10]   40    ld de, #_Newexplo
+   0025 CD 00 00      [17]   41    call cpct_akp_SFXInit_asm
+   0028 11 00 00      [10]   42    ld de, #_Newexplo
+   002B CD 00 00      [17]   43    call cpct_akp_musicInit_asm
+                             44 
+   002E CD 00 00      [17]   45    call menu
+                             46 
+   0031                      47 newGame:
+                             48    ;; Dibujar la pantalla
+   0031 21 00 00      [10]   49    ld hl, #_tileset
+   0034 CD 00 00      [17]   50    call cpct_etm_setTileset2x4_asm
+   0037 21 00 00      [10]   51    ld hl, #_fondo
+   003A E5            [11]   52    push hl
+   003B 21 00 C0      [10]   53    ld hl, #0xC000
+   003E E5            [11]   54    push hl
+   003F 01 00 00      [10]   55    ld bc, #0x0000
+   0042 11 28 32      [10]   56    ld de, #0x3228
+   0045 3E 28         [ 7]   57    ld  a, #0x28
+   0047 CD 00 00      [17]   58    call cpct_etm_drawTileBox2x4_asm
+                             59 
+                             60    ;; Marcador
+   004A 21 02 00      [10]   61    ld hl, #0x0002
+   004D CD 00 00      [17]   62    call cpct_setDrawCharM0_asm                                    ;; Colores del texto
+                             63 
+   0050 11 00 C0      [10]   64    ld de, #0xC000
+   0053 01 3B 14      [10]   65    ld bc, #0x143B
+   0056 CD 00 00      [17]   66    call cpct_getScreenPtr_asm                                     ;; Posición de pantalla donde escribir
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 14.
+Hexadecimal [16-Bits]
+
+
+
+   0059 FD 21 00 00   [14]   67    ld iy, #new
+   005D CD 00 00      [17]   68    call cpct_drawStringM0_asm
+   0060 11 00 C0      [10]   69    ld de, #0xC000
+   0063 01 37 1B      [10]   70    ld bc, #0x1B37
+   0066 CD 00 00      [17]   71    call cpct_getScreenPtr_asm                                     ;; Posición de pantalla donde escribir
+   0069 FD 21 00 00   [14]   72    ld iy, #escore
+   006D CD 00 00      [17]   73    call cpct_drawStringM0_asm
+   0070 11 00 C0      [10]   74    ld de, #0xC000
+   0073 01 37 4E      [10]   75    ld bc, #0x4E37
+   0076 CD 00 00      [17]   76    call cpct_getScreenPtr_asm                                     ;; Posición de pantalla donde escribir
+   0079 FD 21 00 00   [14]   77    ld iy, #escore
+   007D CD 00 00      [17]   78    call cpct_drawStringM0_asm
+   0080 11 00 C0      [10]   79    ld de, #0xC000
+   0083 01 37 8A      [10]   80    ld bc, #0x8A37
+   0086 CD 00 00      [17]   81    call cpct_getScreenPtr_asm                                     ;; Posición de pantalla donde escribir
+   0089 FD 21 00 00   [14]   82    ld iy, #lives                                                  
+   008D CD 00 00      [17]   83    call cpct_drawStringM0_asm                                     ;; Escribe vidas
+   0090 11 00 C0      [10]   84    ld de, #0xC000
+   0093 01 37 5C      [10]   85    ld bc, #0x5C37
+   0096 CD 00 00      [17]   86    call cpct_getScreenPtr_asm
+   0099 FD 21 00 00   [14]   87    ld iy, #puntos
+   009D CD 00 00      [17]   88    call cpct_drawStringM0_asm                                    ;; Dibuja los puntos
+                             89 
+                             90    ;; dibujar las naves en el marcador
+   00A0 01 37 A6      [10]   91    ld bc, #0xA637                                                 ;; En B coordenada Y en C coordenada X
+   00A3 3E 03         [ 7]   92    ld  a, #0x03                                                   ;; El número de naves a dibujar
+   00A5                      93 nextShip:
+   00A5 F5            [11]   94    push af                                                        ;; Preservo A por que las llamadas a cpctelera lo corrompen
+   00A6 C5            [11]   95    push bc                                                        ;; Lo mismo para BC
+   00A7 11 00 C0      [10]   96    ld de, #0xC000
+   00AA CD 00 00      [17]   97    call cpct_getScreenPtr_asm                                     ;; Posición de pantalla donde escribir
+   00AD EB            [ 4]   98    ex de, hl                                                      ;; Necesario por cpct_drawSprite
+   00AE 21 00 00      [10]   99    ld hl, #_spr                                                   ;; Dirección donde esta el sprite
+   00B1 01 05 06      [10]  100    ld bc, #0x0605                                                 ;; B alto y C ancho del sprite
+   00B4 CD 00 00      [17]  101    call cpct_drawSprite_asm                                       ;; dibuja el sprite
+   00B7 C1            [10]  102    pop bc
+   00B8 3E 07         [ 7]  103    ld  a, #0x07
+   00BA 81            [ 4]  104    add a, c
+   00BB 4F            [ 4]  105    ld  c,a
+   00BC F1            [10]  106    pop af
+   00BD 3D            [ 4]  107    dec  a
+   00BE 20 E5         [12]  108    jr nz, nextShip
+                            109 
+                            110    
+                            111 
+   00C0 DD 21 00 00   [14]  112    ld ix, #enemy
+   00C4 CD 00 00      [17]  113    call calXenemy                                        ;; Pide una coordenada X para enemy
+   00C7 DD 21 00 00   [14]  114    ld ix, #enemy2
+   00CB CD 00 00      [17]  115    call calXenemy                                        ;; Pide una coordenada X para enemy2
+   00CE DD 21 00 00   [14]  116    ld ix, #enemy3                       
+   00D2 CD 00 00      [17]  117    call calXenemy                                        ;; Pide una coordenada X para enemy3
+                            118 
+   00D5                     119    main_loop:
+   00D5 DD 21 00 00   [14]  120       ld ix, #Player                                     ;; IX contiene el inicio de los datos del Player    
+   00D9 CD 00 00      [17]  121       call erase_player                                  ;; Borra el sprite de la posición actual
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 15.
+Hexadecimal [16-Bits]
+
+
+
+   00DC DD 21 00 00   [14]  122       ld ix, #enemy                                      ;; IX ahora apunta al inicio de los datos enemigo
+   00E0 CD 00 00      [17]  123       call erase_enemy                                   ;; Borra al enemigo
+                            124 
+   00E3 DD 21 00 00   [14]  125       ld ix, #Player                                     ;; IX contiene el inicio de los datos del Player
+   00E7 CD 00 00      [17]  126       call update_player                                 ;; Calcula la nueva posición
+   00EA DD 21 00 00   [14]  127       ld ix, #enemy                                      ;; IX ahora apunta al inicio de los datos enemigo
+   00EE CD 00 00      [17]  128       call update_enemy                                  ;; Calcula la nueva posición del enemigo
+   00F1 DD 21 00 00   [14]  129       ld ix, #enemy                                      ;; IX contiene el inicio de los datos del enemy
+   00F5 CD 00 00      [17]  130       call colision_enemy                                ;; Ver si los enemigos colisionan
+                            131    
+                            132 
+   00F8 DD 21 00 00   [14]  133       ld ix, #Player                                     ;; IX contiene inicio de los datos del Player
+   00FC CD 00 00      [17]  134       call draw_player                                   ;; Dibuja el sprite en la nueva posición
+   00FF DD 21 00 00   [14]  135       ld ix, #enemy                                      ;; IX ahora apunta al inicio de los datos del enemigo
+   0103 CD 00 00      [17]  136       call draw_enemy                                    ;; Dibuja al enemigo
+                            137   
+                            138 
+   0106 CD 00 00      [17]  139       call disparando                                    ;; Comprobar si esta disparando
+   0109 7E            [ 7]  140       ld  a, (hl)
+   010A FE 01         [ 7]  141       cp #0x01                                           ;; Si esta a uno es que tiene que disparar
+   010C 20 10         [12]  142       jr nz, nodisparar
+                            143 
+   010E CD 00 00      [17]  144       call erase_laser                                   ;; Borra el disparo
+   0111 CD 00 00      [17]  145       call update_laser                                  ;; Actualiza el disparo
+   0114 CD 00 00      [17]  146       call draw_laser                                    ;; Dibuja el disparo
+   0117 DD 21 00 00   [14]  147       ld ix, #enemy
+   011B CD 00 00      [17]  148       call laser_colision                                ;; Ver si laser colision
+                            149 
+   011E                     150 nodisparar::
+   011E CD 00 00      [17]  151       call cpct_waitVSYNC_asm                            ;; Sincronización
+   0121 CD 00 00      [17]  152       call cpct_akp_musicPlay_asm                        ;; Tocar música para usar los efectos de sonidoa
+                            153 
+   0124 DD 21 00 00   [14]  154       ld ix, #Player  
+   0128 DD 7E 06      [19]  155       ld  a, 6(ix)                                       ;; El número de vidas restantes
+   012B FE 00         [ 7]  156       cp  #0x00                                          ;; Ver si estan a cero las vidas
+   012D 20 A6         [12]  157       jr nz, main_loop                                   ;; Continua mientras haya vidas
+                            158 
+                            159 
+   012F 21 04 00      [10]  160       ld hl, #0x0004
+   0132 CD 00 00      [17]  161       call cpct_setDrawCharM0_asm
+                            162 
+   0135 11 00 C0      [10]  163       ld de, #0xC000                                     ;; Inicio de la memoria de video
+   0138 01 0A 64      [10]  164       ld bc, #0x640A                                     ;; Coordenadas X y Y donde escribir
+   013B CD 00 00      [17]  165       call cpct_getScreenPtr_asm                         ;; Obtener dirección de momoria de video
+                            166       
+   013E FD 21 00 00   [14]  167       ld iy, #gameover
+   0142 CD 00 00      [17]  168       call cpct_drawStringM0_asm                         ;; Excribe el mensaje
+                            169 
+   0145 CD 00 00      [17]  170       call cpct_akp_stop_asm                             ;; Para el sonido
+                            171 
+   0148                     172 espera:
+   0148 CD 00 00      [17]  173       call cpct_scanKeyboard_asm                         ;; Escanear al teclado
+   014B CD 00 00      [17]  174       call cpct_isAnyKeyPressed_asm                      ;; Ver si se pulso una tecla
+   014E FE 00         [ 7]  175       cp #0x00                                           ;; Si en A hay un cero es que no se pulso una tecla
+   0150 28 F6         [12]  176       jr  z, espera                                      ;; vuelve a espera hasta que se pulse una tecla
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 16.
+Hexadecimal [16-Bits]
+
+
+
+                            177 
+   0152 CD 00 00      [17]  178       call menu
+                            179 
+   0155 DD 21 00 00   [14]  180       ld ix, #Player                                     ;; Puntero al inicio de datos del jugador
+   0159 DD 36 06 03   [19]  181       ld 6(ix), #0x03                                    ;; Número de vidas de nuevo a tres
+                            182 
+                            183 
+   015D C3 31 00      [10]  184       jp newGame                                         ;; Jugar de nuevo

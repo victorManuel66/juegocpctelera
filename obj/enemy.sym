@@ -1,0 +1,56 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     FPS     =  0007     |     PlayAlto=  0002 
+    PlayAnch=  0003     |     PlayVida=  0006     |     PlayX   =  0000 
+    PlayY   =  0001     |     SprPlayH=  0005     |     SprPlayL=  0004 
+    SpriteAl=  0005     |     SpriteBa=  0004     |     StatusAn=  0008 
+    _enemigo   **** GX  |     _explo1    **** GX  |     _explo2    **** GX
+    _explo3    **** GX  |     _explo4    **** GX  |     _explo5    **** GX
+  0 calXenem   003A GR  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_akp   **** GX  |     cpct_akp   **** GX
+    cpct_akp   **** GX  |     cpct_dis   **** GX  |     cpct_dra   **** GX
+    cpct_dra   **** GX  |     cpct_dra   **** GX  |     cpct_dra   **** GX
+    cpct_etm   **** GX  |     cpct_etm   **** GX  |     cpct_get   **** GX
+    cpct_get   **** GX  |     cpct_isA   **** GX  |     cpct_isK   **** GX
+    cpct_sca   **** GX  |     cpct_set   **** GX  |     cpct_set   **** GX
+    cpct_set   **** GX  |     cpct_wai   **** GX  |   0 dibuja     00C1 R
+  0 draw_ene   0051 GR  |   0 draw_ene   0067 R   |     enemiAlt=  0002 
+    enemiAnc=  0003     |     enemiVel=  0006     |     enemiX  =  0000 
+    enemiY  =  0001     |   0 enemy      0001 GR  |   0 enemy2     0014 GR
+  0 enemy2H    0016 R   |   0 enemy2W    0017 R   |   0 enemy2X    0014 R
+  0 enemy2Y    0015 R   |   0 enemy2an   001D R   |   0 enemy2an   001F R
+  0 enemy2an   0021 R   |   0 enemy2an   0023 R   |   0 enemy2an   0025 R
+  0 enemy2sp   0018 R   |   0 enemy2st   001C R   |   0 enemy2ti   001B R
+  0 enemy2ve   001A R   |   0 enemy3     0027 GR  |   0 enemy3H    0029 R
+  0 enemy3W    002A R   |   0 enemy3X    0027 R   |   0 enemy3Y    0028 R
+  0 enemy3an   0030 R   |   0 enemy3an   0032 R   |   0 enemy3an   0034 R
+  0 enemy3an   0036 R   |   0 enemy3an   0038 R   |   0 enemy3sp   002B R
+  0 enemy3st   002F R   |   0 enemy3ti   002E R   |   0 enemy3ve   002D R
+  0 enemyH     0003 R   |   0 enemyW     0004 R   |   0 enemyX     0001 R
+  0 enemyY     0002 R   |   0 enemyani   000A R   |   0 enemyani   000C R
+  0 enemyani   000E R   |   0 enemyani   0010 R   |   0 enemyani   0012 R
+  0 enemyspr   0005 R   |   0 enemysta   0009 R   |   0 enemytie   0008 R
+  0 enemyvel   0007 R   |   0 erase_en   00CB GR  |   0 erase_en   00E1 R
+  0 fin        004D R   |     frame1Al=  000A     |     frame1Ba=  0009 
+    frame2Al=  000C     |     frame2Ba=  000B     |     frame3Al=  000E 
+    frame3Ba=  000D     |     frame4Al=  0010     |     frame4Ba=  000F 
+    frame5Al=  0012     |     frame5Ba=  0011     |   0 frameExp   0083 R
+  0 frameExp   0091 R   |   0 frameExp   009F R   |   0 frameExp   00AD R
+  0 frameExp   00BB R   |   0 masCiclo   0162 R   |   0 mayor47    004B R
+  0 menorCua   0047 R   |   0 num_enem   0000 R   |   0 otroAlie   0124 R
+  0 posXenem   0166 GR  |   0 posYenem   016B GR  |   0 sigui_en   00D2 R
+  0 sigui_en   0058 R   |   0 sigui_up   0101 R   |     tamagno_=  0013 
+    temporiz=  0007     |   0 update_e   00FA GR  |   0 update_s   0113 R
+  0 update_t   012D R   |   0 vuelve     0161 R
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size  170   flags    0
+

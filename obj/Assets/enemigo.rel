@@ -1,0 +1,21 @@
+XL2
+H 9 areas 2 global symbols
+M enemigo
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 18 flags 0 addr 0
+S _enemigo Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C2 C0 C1 C2 C0 C1 D3 C0 E3 D1 FC E2 D1 FC
+R 00 00 00 00
+T 0E 00 E2 C0 FC C0 C0 FC C0 C0 CC C0
+R 00 00 00 00

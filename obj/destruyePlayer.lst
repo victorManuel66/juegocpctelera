@@ -1,0 +1,159 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+
+
+                              1 .area _CODE
+                              2 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+
+
+                              3 .include "cpctelera.h.s"
+                              1 .globl cpct_disableFirmware_asm
+                              2 .globl cpct_setVideoMode_asm
+                              3 .globl cpct_setPalette_asm
+                              4 .globl cpct_drawSprite_asm
+                              5 .globl cpct_getScreenPtr_asm
+                              6 .globl cpct_scanKeyboard_asm
+                              7 .globl cpct_isKeyPressed_asm
+                              8 .globl cpct_waitVSYNC_asm
+                              9 .globl cpct_drawSolidBox_asm
+                             10 .globl cpct_etm_setTileset2x4_asm
+                             11 .globl cpct_etm_drawTileBox2x4_asm
+                             12 .globl cpct_getRandom_xsp40_u8_asm
+                             13 .globl cpct_akp_SFXInit_asm
+                             14 .globl cpct_akp_musicInit_asm
+                             15 .globl cpct_akp_musicPlay_asm
+                             16 .globl cpct_akp_SFXPlay_asm
+                             17 .globl cpct_akp_SFXStop_asm
+                             18 .globl cpct_akp_stop_asm
+                             19 .globl cpct_drawStringM0_asm
+                             20 .globl cpct_setDrawCharM0_asm
+                             21 .globl cpct_isAnyKeyPressed_asm
+                             22 .globl cpct_drawCharM0_asm
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 3.
+Hexadecimal [16-Bits]
+
+
+
+                              4 .include "Player.h.s"
+                              1 .globl draw_player
+                              2 .globl update_player
+                              3 .globl erase_player
+                              4 .globl disparando
+                              5 .globl posXplayerPtr
+                              6 .globl posYenemyPtr
+                              7 .globl Player
+                              8 .globl TeclaIz
+                              9 .globl TeclaDe
+                             10 .globl TeclaDi
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 4.
+Hexadecimal [16-Bits]
+
+
+
+                              5 
+                              6 
+                              7 .globl _playerexplo1
+                              8 .globl _playerexplo2
+                              9 .globl _playerexplo3
+                             10 .globl _playerexplo4
+                             11 .globl _playerexplo5
+                             12 
+   0000 3E                   13 segundBorrado: .db 0x3E                            ;; Segunda coordenada de la nave a borrar en el marcador
+   0001 45                   14 primerBorrado: .db 0x45                            ;; Tercera coordenada de la nave a borrar en el marcador
+   0002 01                   15 aBorrar:       .db 0x01                            ;; La primera nave a borrar
+                             16 
+                             17 
+   0003                      18 destruyePlayer::
+                             19     ;; A = No Channel (0,1,2)
+                             20     ;; L = Instrument Number (>0)
+                             21     ;; H = Volume (0...F)
+                             22     ;; E = Note (0...143)
+                             23     ;; D = Speed (0 = As original, 1...255 = new Speed (1 is the fastest))
+                             24     ;; BC = Inverted Pitch (-#FFFF -> FFFF). 0 is no pitch. The higher the pitch, the lower the sound.
+   0003 3E 02         [ 7]   25     ld  a, #0x02
+   0005 21 03 0F      [10]   26     ld hl, #0x0F03
+   0008 11 14 00      [10]   27     ld de, #0x0014
+   000B 01 00 00      [10]   28     ld bc, #0x0000
+   000E CD 00 00      [17]   29     call cpct_akp_SFXPlay_asm
+                             30 
+                             31 
+   0011 11 00 C0      [10]   32     ld de, #0xC000                                  ;; Inicio de la memoria de video                          
+   0014 CD 00 00      [17]   33     call posXplayerPtr
+   0017 4E            [ 7]   34     ld  c,(hl)                                      ;; Coordenada X en C
+   0018 3E C1         [ 7]   35     ld  a, #0xC1
+   001A 47            [ 4]   36     ld  b, a                                        ;; Coordenada Y en B
+   001B CD 00 00      [17]   37     call cpct_getScreenPtr_asm
+                             38 
+   001E EB            [ 4]   39     ex de, hl
+   001F 21 00 00      [10]   40     ld hl, #_playerexplo2                                 ;; Siguiente sprite
+   0022 D5            [11]   41     push de                                               ;; Se preserva DE por que lo corrompe cpct_drawSprite_asm
+   0023 CD 72 00      [17]   42     call anima
+   0026 CD 79 00      [17]   43     call espera
+   0029 D1            [10]   44     pop de                                                ;; Se recupera DE que continien la coordenada de pantalla a dibujar
+   002A 21 00 00      [10]   45     ld hl, #_playerexplo3                                 ;; Siguiente sprite
+   002D D5            [11]   46     push de                                               ;; Se preserva DE por que lo corrompe cpct_drawSprite_asm 
+   002E CD 72 00      [17]   47     call anima
+   0031 CD 79 00      [17]   48     call espera
+   0034 D1            [10]   49     pop de                                                ;; Se recupera DE que continien la coordenada de pantalla a dibujar
+   0035 D5            [11]   50     push de                                               ;; Se preserva DE por que lo corrompe cpct_drawSprite_asm
+   0036 21 00 00      [10]   51     ld hl, #_playerexplo4
+   0039 CD 72 00      [17]   52     call anima
+   003C CD 79 00      [17]   53     call espera
+   003F D1            [10]   54     pop de                                                ;; Se recupera DE que continien la coordenada de pantalla a dibujar
+   0040 21 00 00      [10]   55     ld hl, #_playerexplo5
+   0043 CD 72 00      [17]   56     call anima
+   0046 CD 79 00      [17]   57     call espera
+                             58     
+   0049 DD 21 00 00   [14]   59     ld ix, #Player
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 5.
+Hexadecimal [16-Bits]
+
+
+
+   004D DD 7E 06      [19]   60     ld  a, 6(ix)                                         ;; Cargo el número de vidas del player
+   0050 3D            [ 4]   61     dec a                                                ;; resto una
+   0051 DD 77 06      [19]   62     ld 6(ix), a                                          ;; Se vuelve a guardar
+                             63 
+   0054 3A 02 00      [13]   64     ld  a,(aBorrar)                                      ;; La primera nave a borrar
+   0057 FE 01         [ 7]   65     cp  #0x01                                            ;; Ver si es el primera muerte
+   0059 20 0D         [12]   66     jr nz, borraDos
+   005B 3A 01 00      [13]   67     ld  a, (primerBorrado)
+   005E 4F            [ 4]   68     ld  c, a                                             ;; La coordenada X nave a borrar en C
+   005F CD 80 00      [17]   69     call borraNave
+   0062 3E 02         [ 7]   70     ld  a, #0x02
+   0064 32 02 00      [13]   71     ld  (aBorrar), a
+   0067 C9            [10]   72     ret
+   0068                      73 borraDos:
+   0068 FE 02         [ 7]   74     cp #0x02
+   006A 3A 00 00      [13]   75     ld  a,(segundBorrado)
+   006D 4F            [ 4]   76     ld  c, a
+   006E CD 80 00      [17]   77     call borraNave
+                             78    
+   0071 C9            [10]   79     ret
+                             80 
+   0072                      81 anima:
+   0072 01 05 06      [10]   82     ld bc, #0x0605                                        ;; Medidas en bytes del player
+   0075 CD 00 00      [17]   83     call cpct_drawSprite_asm
+   0078 C9            [10]   84     ret
+                             85 
+   0079                      86 espera:
+   0079 3E 14         [ 7]   87     ld a, #0x14
+   007B                      88 otro:
+   007B 76            [ 4]   89     halt
+   007C 3D            [ 4]   90     dec a
+   007D 20 FC         [12]   91     jr nz,otro
+   007F C9            [10]   92     ret
+                             93 
+   0080                      94 borraNave:
+   0080 11 00 C0      [10]   95     ld de, #0xC000
+   0083 06 A6         [ 7]   96     ld  b, #0xA6
+   0085 CD 00 00      [17]   97     call cpct_getScreenPtr_asm
+   0088 EB            [ 4]   98     ex de,hl
+   0089 3E 00         [ 7]   99     ld  a, #0x00
+   008B 01 05 06      [10]  100     ld bc, #0x0605
+   008E CD 00 00      [17]  101     call cpct_drawSolidBox_asm
+   0091 C9            [10]  102     ret

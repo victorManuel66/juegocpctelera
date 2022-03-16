@@ -1,0 +1,13 @@
+XL2
+H 1 areas A global symbols
+S update_enemy Ref0000
+S erase_enemy Ref0000
+S enemy2 Ref0000
+S enemy3 Ref0000
+S enemy Ref0000
+S .__.ABS. Def0000
+S calXenemy Ref0000
+S draw_enemy Ref0000
+S posXenemyPtr Ref0000
+S posYenemyPtr Ref0000
+A _CODE size 0 flags 0 addr 0

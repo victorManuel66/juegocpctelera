@@ -1,0 +1,79 @@
+XL2
+H 1 areas 2C global symbols
+S update_enemy Ref0000
+S cpct_isKeyPressed_asm Ref0000
+S cpct_setPalette_asm Ref0000
+S cpct_akp_SFXInit_asm Ref0000
+S cpct_akp_stop_asm Ref0000
+S cpct_drawStringM0_asm Ref0000
+S cpct_akp_SFXPlay_asm Ref0000
+S erase_enemy Ref0000
+S cpct_drawSprite_asm Ref0000
+S enemy2 Ref0000
+S enemy3 Ref0000
+S cpct_etm_drawTileBox2x4_asm Ref0000
+S cpct_drawCharM0_asm Ref0000
+S cpct_etm_setTileset2x4_asm Ref0000
+S TeclaDe Ref0000
+S TeclaDi Ref0000
+S draw_player Ref0000
+S cpct_akp_SFXStop_asm Ref0000
+S enemy Ref0000
+S .__.ABS. Def0000
+S destruyePlayer Ref0000
+S disparando Ref0000
+S calXenemy Ref0000
+S draw_enemy Ref0000
+S cpct_isAnyKeyPressed_asm Ref0000
+S TeclaIz Ref0000
+S Player Ref0000
+S posXplayerPtr Ref0000
+S update_player Ref0000
+S cpct_waitVSYNC_asm Ref0000
+S cpct_setVideoMode_asm Ref0000
+S cpct_getRandom_xsp40_u8_asm Ref0000
+S destruyeEnemigo Ref0000
+S cpct_akp_musicInit_asm Ref0000
+S cpct_disableFirmware_asm Ref0000
+S cpct_akp_musicPlay_asm Ref0000
+S cpct_drawSolidBox_asm Ref0000
+S erase_player Ref0000
+S posXenemyPtr Ref0000
+S cpct_setDrawCharM0_asm Ref0000
+S cpct_scanKeyboard_asm Ref0000
+S cpct_getScreenPtr_asm Ref0000
+S posYenemyPtr Ref0000
+A _CODE size 51 flags 0 addr 0
+S colision_enemy Def0001
+T 00 00 03
+R 00 00 00 00
+T 01 00
+R 00 00 00 00
+T 01 00 FD 21 00 00 FD 5E 00
+R 00 00 00 00 00 04 00 00
+T 08 00
+R 00 00 00 00
+T 08 00 D5 CD 17 00 D1 1D C8 01 13 00 DD 09 18 F2
+R 00 00 00 00 00 04 00 00
+T 16 00 C9
+R 00 00 00 00
+T 17 00
+R 00 00 00 00
+T 17 00 DD 7E 08 FE 00 C0 DD 46 00 DD 7E 03 80 47
+R 00 00 00 00
+T 25 00 CD 00 00 7E B8 28 03 38 01 C9
+R 00 00 00 00 02 03 1B 00
+T 2F 00
+R 00 00 00 00
+T 2F 00 DD 46 00 C6 05 B8 28 03 30 01 C9
+R 00 00 00 00
+T 3A 00
+R 00 00 00 00
+T 3A 00 DD 46 01 DD 7E 02 80 47 3E C1 B8 28 03 38
+R 00 00 00 00
+T 48 00 01 C9
+R 00 00 00 00
+T 4A 00
+R 00 00 00 00
+T 4A 00 CD 00 00 CD 00 00 C9
+R 00 00 00 00 02 03 20 00 02 06 14 00

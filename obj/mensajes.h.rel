@@ -1,0 +1,15 @@
+XL2
+H 1 areas C global symbols
+S fue Ref0000
+S escore Ref0000
+S new Ref0000
+S gameover Ref0000
+S .__.ABS. Def0000
+S dere Ref0000
+S lives Ref0000
+S puntos Ref0000
+S writeMenu1 Ref0000
+S izqui Ref0000
+S writeMenu2 Ref0000
+S writeMenu3 Ref0000
+A _CODE size 0 flags 0 addr 0

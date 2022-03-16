@@ -1,0 +1,14 @@
+XL2
+H 1 areas B global symbols
+S TeclaDe Ref0000
+S TeclaDi Ref0000
+S draw_player Ref0000
+S .__.ABS. Def0000
+S disparando Ref0000
+S TeclaIz Ref0000
+S Player Ref0000
+S posXplayerPtr Ref0000
+S update_player Ref0000
+S erase_player Ref0000
+S posYenemyPtr Ref0000
+A _CODE size 0 flags 0 addr 0

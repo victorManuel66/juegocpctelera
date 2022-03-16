@@ -1,0 +1,1 @@
+.globl laser_colision

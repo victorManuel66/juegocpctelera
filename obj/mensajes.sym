@@ -1,0 +1,18 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |   0 dere       0047 GR  |   0 escore     000E GR
+  0 fue        0050 GR  |   0 gameover   0000 GR  |   0 izqui      003D GR
+  0 lives      0014 GR  |   0 new        000A GR  |   0 puntos     0059 GR
+  0 writeMen   001A GR  |   0 writeMen   0023 GR  |   0 writeMen   0030 GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size   5F   flags    0
+

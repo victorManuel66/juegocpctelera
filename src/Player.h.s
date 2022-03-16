@@ -1,0 +1,10 @@
+.globl draw_player
+.globl update_player
+.globl erase_player
+.globl disparando
+.globl posXplayerPtr
+.globl posYenemyPtr
+.globl Player
+.globl TeclaIz
+.globl TeclaDe
+.globl TeclaDi
