@@ -20,3 +20,4 @@
 .globl cpct_setDrawCharM0_asm
 .globl cpct_isAnyKeyPressed_asm
 .globl cpct_drawCharM0_asm
+.globl cpct_setInterruptHandler_asm

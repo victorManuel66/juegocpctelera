@@ -7,3 +7,6 @@
 .globl enemy
 .globl enemy2
 .globl enemy3
+.globl num_enemigos
+.globl oleada
+.globl lastNum_enemies

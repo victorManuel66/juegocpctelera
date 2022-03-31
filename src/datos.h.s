@@ -1,5 +1,6 @@
-tamagno_enemy = 0x13                               ;; Tamaño del array de entidades
-num_enemigos: .db 0x03                             ;; Número de enemigos
+tamagno_enemy =            0x14                               ;; Tamaño del array de entidades
+
+
 
 ;; Constantes del array del enemigo
 .equ enemiX,      0
@@ -21,6 +22,7 @@ num_enemigos: .db 0x03                             ;; Número de enemigos
 .equ frame4Alto, 16
 .equ frame5Bajo, 17
 .equ frame5Alto, 18
+.equ conVida,    19 
 
 ;; Constantes del Player
 .equ PlayX,      0

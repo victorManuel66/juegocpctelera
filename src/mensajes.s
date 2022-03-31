@@ -33,4 +33,7 @@ fue::
 puntos::
     .ascii "00000"
     .db 0
+nivel1::
+    .ascii "READY!"
+    .db 0
 

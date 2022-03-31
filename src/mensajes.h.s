@@ -9,3 +9,4 @@
 .globl dere
 .globl fue
 .globl puntos
+.globl nivel1

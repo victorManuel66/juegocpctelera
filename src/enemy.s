@@ -1,3 +1,4 @@
+.module enemy
 .area _CODE
 
 .include "cpctelera.h.s"
@@ -10,73 +11,33 @@
 .globl _explo4
 .globl _explo5
 
-.macro EntEnemigas name, x, y, h, w, _enemigo, velo, tiem, sta, animac1, animac2, animac3, animac4, animac5
+.macro EntEnemigas name, x, y, h, w, _enemigo, velo, tiem, sta, animac1, animac2, animac3, animac4, animac5, alive
   name::
-    name'X:      .db x
-    name'Y:      .db y
-    name'H:      .db h
-    name'W:      .db w
-    name'spr:    .dw _enemigo
-    name'vel:    .db velo
-    name'tiemp:  .db tiem
-    name'status: .db sta
-    name'ani1:   .dw animac1
-    name'ani2:   .dw animac2
-    name'ani3:   .dw animac3
-    name'ani4:   .dw animac4
-    name'ani5:   .dw animac5
+    name'X:      .db x                      ;; Coordenada X del enemigo
+    name'Y:      .db y                      ;; Coordenada Y del enemigo
+    name'H:      .db h                      ;; Altura del sprite del enemigo
+    name'W:      .db w                      ;; Ancho del sprite del enemigo
+    name'spr:    .dw _enemigo               ;; Dirección del sprite del enemigo
+    name'vel:    .db velo                   ;; Velocidad del enemigo
+    name'tiemp:  .db tiem                   ;; Tiempo entre fotográmas
+    name'status: .db sta                    ;; Estado de la animación al explotar
+    name'ani1:   .dw animac1                ;; Direccion sprite animación 1
+    name'ani2:   .dw animac2                ;; Direccion sprite animación 2 
+    name'ani3:   .dw animac3                ;; Direccion sprite animación 3
+    name'ani4:   .dw animac4                ;; Direccion sprite animación 4
+    name'ani5:   .dw animac5                ;; Direccion sprite animación 5
+    name'vivo:   .db alive                  ;; 00 indica que esta muerto, 01 indica que esta viva
 .endm
 
-EntEnemigas enemy, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5
-EntEnemigas enemy2, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5
-EntEnemigas enemy3, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5
+EntEnemigas enemy,  0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5, 0x01
+EntEnemigas enemy2, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5, 0x01
+EntEnemigas enemy3, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5, 0x01
+EntEnemigas enemy4, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5, 0x01
+EntEnemigas enemy5, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1, _explo2, _explo3, _explo4, _explo5, 0x01
 
-
-
-;;
-;;enemy::
-;;    enemyX:     .db 0x00                               ;; Este será un número aleatorio entre 4 y 48
-;;    enemyY:     .db 0x09                               ;; Coordenada Y del enemigo
-;;    enemyAlto:  .db 0x08                               ;; Alto del Sprite en bytes del enemigo
-;;    enemyAncho: .db 0x03                               ;; Ancho del Sprte en bytes del enemigo
-;;    ptrSprite:  .dw _enemigo                           ;; Puntero a los datos del Sprite del enemigo
-;;    velocidad:  .db 0x01                               ;; Velocidad del enemigo
-;;    duraAnim:   .db 0x00                               ;; Tiempo que dura cada animación
-;;    estadoAni:  .db 0x00                               ;; Estado de la animación
-;;    anima1:     .dw _explo1                            ;; Primer frame de la animación
-;;    anima2:     .dw _explo2                            ;; Segundo frame de la animación
-;;    anima3:     .dw _explo3                            ;; Tercer frame de la animación
-;;    anima4:     .dw _explo4                            ;; Cuarto frame de la animación
-;;    anima5:     .dw _explo5                            ;; Quinto frame de la animación
-;;enemy2::
-;;    enemyX2:     .db 0x00                              ;; Este será un número aleatorio entre 4 y 48
-;;    enemyY2:     .db 0x09                              ;; Coordenada Y del enemigo
-;;    enemyAlto2:  .db 0x08                              ;; Alto del Sprite en bytes del enemigo
-;;    enemyAncho2: .db 0x03                              ;; Ancho del Sprte en bytes del enemigo
-;;    ptrSprite2:  .dw _enemigo                          ;; Puntero a los datos del Sprite del enemigo
-;;    velocidad2:  .db 0x01                              ;; Velocidad del enemigo
-;;    duraAnim2:   .db 0x00                              ;; Tiempo que dura cada animación
-;;    estadoAni2:  .db 0x00                              ;; Estado de la animación
-;;    anima1_2:    .dw _explo1                           ;; Primer frame de la animación
-;;    anima2_2:    .dw _explo2                           ;; Segundo frame de la animación
-;;    anima3_2:    .dw _explo3                           ;; Tercer frame de la animación
-;;    anima4_2:    .dw _explo4                           ;; Cuarto frame de la animación
-;;    anima5_2:    .dw _explo5                           ;; Quinto frame de la animación
-;;enemy3::
-;;    enemyX3:     .db 0x00                              ;; Este será un número aleatorio entre 4 y 48
-;;    enemyY3:     .db 0x09                              ;; Coordenada Y del enemigo
-;;    enemyAlto3:  .db 0x08                              ;; Alto del Sprite en bytes del enemigo
-;;    enemyAncho3: .db 0x03                              ;; Ancho del Sprte en bytes del enemigo
-;;    ptrSprite3:  .dw _enemigo                          ;; Puntero a los datos del Sprite del enemigo
-;;    velocidad3:  .db 0x01                              ;; Velocidad del enemigo
-;;    duraAnim3:   .db 0x00                              ;; Tiempo que dura cada animación
-;;    estadoAni3:  .db 0x00                              ;; Estado de la animación
-;;    anima1_3:    .dw _explo1                           ;; Primer frame de la animación
-;;    anima2_3:    .dw _explo2                           ;; Segundo frame de la animación
-;;    anima3_3:    .dw _explo3                           ;; Tercer frame de la animación
-;;    anima4_3:    .dw _explo4                           ;; Cuarto frame de la animación
-;;    anima5_3:    .dw _explo5                           ;; Quinto frame de la animación
-;;
+num_enemigos::             .db 0x05                           ;; Número de enemigos en pantalla a la vez
+oleada::                   .db 0x14                           ;; Número total de la primera oleada de enemigos
+lastNum_enemies::          .db 0x05                           ;; Los últimos enemigos dibujados a destruir, debe tener mismo valor que num_enemigos
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -84,7 +45,7 @@ EntEnemigas enemy3, 0x00, 0x09, 0x08, 0x03, _enemigo, 0x01, 0x00, 0x00, _explo1,
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                   
 calXenemy::
     call cpct_getRandom_xsp40_u8_asm                   ;; Devuelve en A un numero pseudo aleatorio de 8 bits
-    cp #0x05                                           ;; Comparo con el valor mmímimo
+    cp #0x05                                           ;; Comparo con el valor mímimo
     jr c, menorCuatro                                  ;; Si es menor que cuatro salta a menorCuatro
     cp #0x2f                                           ;; Comparo con 48 decimal
     jr nc, mayor47                                     ;; Si no hay acarreo es que es mayor de 48
@@ -95,14 +56,14 @@ menorCuatro:
 mayor47:
     jr calXenemy
 fin:
-    ld enemiX(ix), a                                        ;; Guarda la nueva coordenada X para el enemigo
+    ld enemiX(ix), a                                   ;; Guarda la nueva coordenada X para el enemigo
     ret
 
 draw_enemy::
     ld  iy, #num_enemigos
     ld  e, 0(iy)
 sigui_enemy_draw:                         
-    push de                                            ;; draw_enemi_sprite corrompe DE
+    push de                                            ;; draw_enemy_sprite corrompe DE
     call draw_enemy_sprite                             ;; Dibujar una entidad enemigo
     pop de                                             ;; Recuperar DE con el total de entidades enemigas restantes
     dec e                                              ;; Resta uno al total de entidades enemigas
@@ -112,61 +73,63 @@ sigui_enemy_draw:
     jr sigui_enemy_draw                                ;; Siguiente enemigo a dibujar
     ret
 
-draw_enemy_sprite:                                 
+draw_enemy_sprite:
+    ld  a, conVida(ix)                                 ;; *************************
+    cp #0x00                                           ;; *************************
+    ret z                                              ;; *************************                             
     ld de, #0xC000                                     ;; Inicio de la memoria de video                                
     ld  b, enemiY(ix)                                  ;; Coordenada Y del enemigo en B
     ld  c, enemiX(ix)                                  ;; Coordenada X del enemigo en C
     call cpct_getScreenPtr_asm
 
     ex de, hl
-    ld  a, #0x00                                       ;; *********** El Sprite de la nave *****************
-    cp StatusAni(ix)                                   ;; *********** El estatus de la animación ************
-    jr nz, frameExplo1                                 ;; *********** Si no es el sprite de la nave, ve a explosion 1 *****************
+    ld  a, #0x00                                       ;; El Sprite de la nave 
+    cp StatusAni(ix)                                   ;; El estatus de la animación 
+    jr nz, frameExplo1                                 ;; Si no es el sprite de la nave, ve a explosion 1
     ld  l, SpriteBajo(ix)
     ld  h, SpriteAlto(ix)                              ;; En HL direccion del Sprite del enemigo
-    jr dibuja                                          ;; ************ Dibuja el sprite de la nave *****************************
+    jr dibuja                                          ;; Dibuja el sprite de la nave 
 frameExplo1:
     inc  a                                             ;; Ver si el el fotograma 1 de a animación
-    cp StatusAni(ix)                                   ;; *********** El estatus de la animación ************
-    jr nz, frameExplo2                                 ;; ******** Si no es explosión 1 ver si es explosión 2 *********************
-    ld  l, frame1Bajo(ix)                              ;; *********** Byte bajo de la dirección del sprite **********************
-    ld  h, frame1Alto(ix)                              ;; *********** Byte alto de la dirección del sprite **********************
+    cp StatusAni(ix)                                   ;; El estatus de la animación
+    jr nz, frameExplo2                                 ;; Si no es explosión 1 ver si es explosión 2
+    ld  l, frame1Bajo(ix)                              ;; Byte bajo de la dirección del sprite
+    ld  h, frame1Alto(ix)                              ;; Byte alto de la dirección del sprite
     jr dibuja
 frameExplo2:
-    inc  a                                             ;; *********** Ver si es el fotograma 2 de la animación *********
-    cp StatusAni(ix)                                   ;; *********** El estatus de la animación ************
-    jr nz, frameExplo3                                 ;; ******** Si no es explosión 2 ver si es explosión 3 *********************
-    ld  l, frame2Bajo(ix)                              ;; *********** Byte bajo de la dirección del sprite **********************
-    ld  h, frame2Alto(ix)                              ;; *********** Byte alto de la dirección del sprite **********************
+    inc  a                                             ;; Ver si es el fotograma 2 de la animación
+    cp StatusAni(ix)                                   ;; El estatus de la animación
+    jr nz, frameExplo3                                 ;; Si no es explosión 2 ver si es explosión 3
+    ld  l, frame2Bajo(ix)                              ;; Byte bajo de la dirección del sprite
+    ld  h, frame2Alto(ix)                              ;; Byte alto de la dirección del sprite
     jr dibuja
 frameExplo3:
-    inc  a                                             ;; ************* Ver si es el fotograma 3 de la animación *******************
-    cp StatusAni(ix)                                   ;; ************* El estatus de la animación    *******************************
-    jr nz, frameExplo4                                 ;; ********** Si no es la explosión 3 ver si es la 5 ********************
-    ld  l, frame3Bajo(ix)                              ;; *********** Byte bajo de la dirección del sprite **********************
-    ld  h, frame3Alto(ix)                              ;; *********** Byte alto de la dirección del sprite **********************
+    inc  a                                             ;; Ver si es el fotograma 3 de la animación
+    cp StatusAni(ix)                                   ;; El estatus de la animación
+    jr nz, frameExplo4                                 ;; Si no es la explosión 3 ver si es la 5 
+    ld  l, frame3Bajo(ix)                              ;; Byte bajo de la dirección del sprite 
+    ld  h, frame3Alto(ix)                              ;; Byte alto de la dirección del sprite 
     jr dibuja
 frameExplo4:
-    inc  a                                             ;; ************* Ver si es el fotograma 4 de la animación *******************
-    cp StatusAni(ix)                                   ;; ************* El estatus de la animación    *******************************
-    jr nz, frameExplo5                                 ;; ********** Si no es la explosión 4 ver si es la 5 ********************
-    ld  l, frame4Bajo(ix)                              ;; *********** Byte bajo de la dirección del sprite **********************
-    ld  h, frame4Alto(ix)                              ;; *********** Byte alto de la dirección del sprite **********************
+    inc  a                                             ;; Ver si es el fotograma 4 de la animación 
+    cp StatusAni(ix)                                   ;; El estatus de la animación   
+    jr nz, frameExplo5                                 ;; Si no es la explosión 4 ver si es la 5 
+    ld  l, frame4Bajo(ix)                              ;; Byte bajo de la dirección del sprite 
+    ld  h, frame4Alto(ix)                              ;; Byte alto de la dirección del sprite 
     jr dibuja
 frameExplo5:
-    ld  l, frame5Bajo(ix)                              ;; *********** Byte bajo de la dirección del sprite **********************
-    ld  h, frame5Alto(ix)                              ;; *********** Byte alto de la dirección del sprite **********************
+    ld  l, frame5Bajo(ix)                              ;; Byte bajo de la dirección del sprite
+    ld  h, frame5Alto(ix)                              ;; Byte alto de la dirección del sprite
 dibuja:
     ld  b, enemiAlto(ix)                               ;; Alto enemigo en B (en bytes)
     ld  c, enemiAncho(ix)                              ;; Ancho enemigo en C (en bytes)
-    call cpct_drawSprite_asm
-
+    call cpct_drawSprite_asm                           ;; Borra el último frame de la animación de la explosión
 
     ret                                                ;; Aquí acaba draeçw_enemy_sprite
 
 erase_enemy::
     ld iy, #num_enemigos
-    ld  e, 0(iy)                           
+    ld  e, 0(iy)                                      ;; En E el número de enemigos                       
 sigui_enemy:
     push de
     call erase_enemy_sprite                           ;; Borrar una entidad enemigo enemigo
@@ -179,6 +142,9 @@ sigui_enemy:
     ret
 
 erase_enemy_sprite:
+    ld  a, conVida(ix)                                 ;; *************************
+    cp #0x00                                           ;; *************************
+    ret z                                              ;; ************************* 
     ld de, #0xC000                                    ;; Inicio de la memoria de video
     ld  b, enemiY(ix)                                 ;; Coordenada Y del enemigo
     ld  c, enemiX(ix)                                 ;; Coordenada X del enemigo
@@ -196,7 +162,7 @@ update_enemy::
     ld iy, #num_enemigos
     ld  e, 0(iy)                                      ;; En E el números de enemigos          
 sigui_update:   
-    push de                                           ;; Preservo E 
+    push de                                           ;; Preservo E
     call update_spr_enemy                             ;; Actualiza posición X e Y de los enemigos
     call update_tempo_enemy                           ;; Actualiza el tiempo que se ve el fotograma
     pop  de                                           ;; Recupero número de entidades enemigas
@@ -220,6 +186,12 @@ otroAlien:
     ld  a, #0x09                                      ;; Reset de la coordenada Y del enemigo
     ld  enemiY(ix), a                                 ;; Se guarda
     call calXenemy                                    ;; Calcula de forma aleatoria otra coordenada X
+    ld hl, #oleada                                    ;; Número total de enemigos dibujados
+    xor  a                                            ;; Acumulador a cero
+    cp (hl)                                           ;; Ver si ha llegado a cero el número total de enemigos dibujados
+    jr z, escero                                      ;; Si no es cero
+    dec (hl)                                          ;; decrementa
+escero:
     ret
 
 update_tempo_enemy:
@@ -227,7 +199,7 @@ update_tempo_enemy:
     cp #0x00                                          ;;  Si es cero, no esta explotando 
     ret z                                             ;;  Por lo tanto vuelve 
     ld  a, temporiza(ix)                              ;;  Valor actual del temporizador
-    cp  #0x02                                         ;;  Ver si han pasado el número de ciclos
+    cp  #0x02                                         ;;  Ver si han pasado el número de ciclosa
     jr nz, masCiclos                                  ;;  Si no ha llegado sigue sumando ciclos
     ld  temporiza(ix), #0x00                          ;;  El temporizador a cero
     inc StatusAni(ix)                                 ;;  El siguiente fotograma de la animación 
@@ -241,7 +213,14 @@ update_tempo_enemy:
     call calXenemy                                    ;;  Nueva coordenada X aleatoria para el enemigo
     call cpct_getScreenPtr_asm                        ;;  Borra el último sprite de la animación
     ld StatusAni(ix), #0x00                           ;;  Vuelta al fotograma cero
+    ld hl, #oleada                                    ;;  Número total de enemigos aue han aparecido
+    ld a, (hl)                                        ;;  Al acumulador
+    cp #0x00                                          ;;  Si es cero
+    jr z, acaba                                       ;;  No aparecen más enemigos
     ld enemiVelo(ix), #0x01                           ;;  Activar la velocidad del enemigo
+    jr vuelve                                         ;; 
+acaba:                                                ;; 
+    ld conVida(ix), #0x00                             ;;  El enemigo esta muerto
     
 vuelve:
     ret

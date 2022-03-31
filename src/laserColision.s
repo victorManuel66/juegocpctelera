@@ -14,7 +14,7 @@
 
 laser_colision::
     ld iy, #num_enemigos
-    ld  e, 0(iy)                         
+    ld  e, 0(iy)                                    ;; Cargar E con el contenido de la posición de memoria num_enemigos                        
 sigui_enemy:
     push de                                         ;; Preservo E por que el sonido corrompe DE
     call laser_coli                                 ;; Ver si collisiona un enemigo
@@ -93,4 +93,3 @@ explosion:
     ld bc, #0x0000
     call cpct_akp_SFXPlay_asm
     ret
-

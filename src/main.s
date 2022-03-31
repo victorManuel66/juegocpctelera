@@ -1,4 +1,4 @@
-.module principal
+.module main
 
 .include "cpctelera.h.s"
 .include "Player.h.s"
@@ -11,6 +11,7 @@
 .include "menu.h.s"
 .include "destroyEnemy.h.s"
 .include "datos.h.s"
+.include "control.h.s"
 
 .area _DATA
 .area _CODE
@@ -24,7 +25,7 @@
 
 
 paleta:
-   .db 20,20,29,24,12,28,11,2,0,14,0,0,19,10,0,27
+   .db 20,20,29,24,12,28,11,2,0,14,0,0,19,10,14,27
 
 _main::
    ;; Disable firmware to prevent it from interfering with string drawing
@@ -107,14 +108,19 @@ nextShip:
    dec  a
    jr nz, nextShip
 
-   
-
+principal:
+      ld hl, #0x000E
+      call cpct_setDrawCharM0_asm
+      ld de, #0xC000
+      ld bc, #0x4E10
+      call cpct_getScreenPtr_asm                                     ;; Posición de pantalla donde escribir
+      ld iy, #nivel1                                                 ;; Dirección donde se encuentra el mensaje
+      call cpct_drawStringM0_asm
+      call XX                                                        ;;**************************************
+      jr .
+XX:   
    ld ix, #enemy
-   call calXenemy                                        ;; Pide una coordenada X para enemy
-   ld ix, #enemy2
-   call calXenemy                                        ;; Pide una coordenada X para enemy2
-   ld ix, #enemy3                       
-   call calXenemy                                        ;; Pide una coordenada X para enemy3
+   call situaEnemigos
 
    main_loop:
       ld ix, #Player                                     ;; IX contiene el inicio de los datos del Player    
@@ -149,8 +155,15 @@ nextShip:
 
 nodisparar::
       call cpct_waitVSYNC_asm                            ;; Sincronización
+      ld hl, #reloj
+      call cpct_setInterruptHandler_asm
       call cpct_akp_musicPlay_asm                        ;; Tocar música para usar los efectos de sonidoa
 
+      ld  a, (oleada)                                    ;; *****************************
+      cp  #0x00                                          ;; *****************************
+      call z, ultimosEnemigos                            ;; *****************************
+      cp  #0x00                                          ;; *****************************
+      ret  z                                             ;; *****************************
       ld ix, #Player  
       ld  a, 6(ix)                                       ;; El número de vidas restantes
       cp  #0x00                                          ;; Ver si estan a cero las vidas
@@ -178,7 +191,13 @@ espera:
       call menu
 
       ld ix, #Player                                     ;; Puntero al inicio de datos del jugador
-      ld 6(ix), #0x03                                    ;; Número de vidas de nuevo a tres
+      ld 6(ix), #0x03                                    ;; Número de vidas de nuevo a tre
 
 
       jp newGame                                         ;; Jugar de nuevo
+
+ultimosEnemigos:
+      ld  a,(lastNum_enemies)                            ;; El acumulador con la cantidad de últimos enemigos
+      dec a                                              ;; Uno menos
+      ld (lastNum_enemies), a                            ;; Se actualiza
+   ret
